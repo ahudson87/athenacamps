@@ -1,0 +1,160 @@
+@import "compass/css3/";
+@import "variables";
+
+html {
+	&.no-touch {
+		& a {
+			&:hover {
+				color: $teal-shade;
+			}
+			&.button {
+				&:hover {
+					color: white;
+				}
+				&.select-button:hover {
+					color: $gray;
+					border-color: rgba($gray, 1);
+				}
+				&.aqua:hover {
+					background-color: $aqua-shade;
+				}
+				&.white:hover {
+					background-color: $off-white;
+				}
+				&.tangerine:hover {
+					background-color: $tangerine-shade;
+				}
+				&.fuschia:hover {
+					background-color: $fuschia-shade;
+				}
+				&.sunflower:hover {
+					background-color: $sunflower-shade;
+				}
+				&.teal:hover {
+					background-color: $teal-shade;
+				}
+			}
+		}
+		& .hero {
+			background-attachment: fixed;
+		}
+		& .hero a.hero-link:hover {
+			& h1, & h2 {
+				color: $aqua;
+			}
+		}
+		& .hero ul.social li a {
+			&:hover {
+				background-color: rgba(255,255,255,.9);
+			}
+		}
+		& article#homepage .featured-testimonial {
+			background-attachment: fixed;
+		}
+		& .featured-testimonial a.button {
+			&:hover {
+				background-color: rgba(255,255,255,.8) !important;
+				color: $fuschia;
+			}
+		}
+		& .triple-expander ul li.row {
+			& span.expander {
+				&:hover {
+					background-color: $fuschia-shade;
+					@include transform(scale(1.25));
+				}
+			}
+			&:nth-child(2) span.expander {
+				&:hover {
+					background-color: $tangerine-shade;
+				}
+			}
+			&:nth-child(3) span.expander {
+				&:hover {
+					background-color: $aqua-shade;
+				}
+			}
+		}
+		& .reg-table {
+			& .button-triplet {
+				& a.button {
+					&:hover {
+						background-color: $aqua !important;
+						color: white !important;
+						border-color: $aqua !important;
+					}
+				}
+			}
+		}
+		& .schedule {
+			background-attachment: fixed;
+		}
+		& .promotions-slick {
+			& a {
+				&:hover {
+					color: white;
+					border-color: rgba(255,255,255,1);
+				}
+			}
+		}
+		& .basic-testimonial-row .basic-testimonial a.button {
+			&:hover {
+				color: $gray;
+				background-color: $off-white;
+			}
+		}
+		& .blog-categories a.button {
+			&:hover {
+				background-color: $dark-gray;
+				color: white;
+			}
+		}
+		.blog-subscribe input[type=submit] {
+			cursor: pointer;
+			&:hover {
+		    	background-color: $tangerine;
+				color: white;
+	    	}
+	    }
+		& ul.blog-pages li a {
+			&:hover {
+				color: white;
+				background-color: $fuschia;
+			}
+		}
+		& .contact-row ul li a {
+			&:hover {
+				color: $tan;
+			}
+		}
+		& .contact-row form input[type=submit] {
+			&:hover {
+				background-color: $tangerine;
+				color: white;
+			}
+		}
+		& footer {
+			& a {
+				&:hover {
+					color: $tangerine;
+				}
+				&.telto:hover {
+					color: white;
+				}
+				&.mailto:hover {
+					color: $tangerine;
+					border-color: $tangerine;
+				}
+				&.footer-btn:hover {
+					background-color: white;
+					color: #3a3b3c;
+				}
+			}
+			& ul.site-map li a {
+				&:hover {
+					color: white;
+				}
+			}
+		}
+	}
+}

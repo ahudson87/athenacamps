@@ -1,5 +1,8 @@
 @import "settings";
 @import "foundation";
+@import "compass/css3/";
+@import "fonts";
+@import "variables";
 
 // Or selectively include components
 // @import
@@ -38,3 +41,2012 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+
+/*~~~~~~~~~~~ START GLOBAL STYLES ~~~~~~~~~~*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: $default-font-size;
+}
+
+body {
+	background-color: white;
+	font-family: $museo-family;
+	color: $gray;
+	font-weight: $regular-weight;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+a {
+	color: $teal;
+	@include transition(all .2s linear);
+}
+
+em {
+	font-style: normal;
+	line-height: 2.5;
+	padding: .5rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	&.highlight {
+		color: white;
+	}
+	&.aqua {
+		background-color: $aqua;
+		@include box-shadow(10px 0 0 $aqua, -10px 0 0 $aqua);
+	}
+	&.teal {
+		background-color: $teal;
+		@include box-shadow(10px 0 0 $teal, -10px 0 0 $teal);
+	}
+	&.tangerine {
+		background-color: $tangerine;
+		@include box-shadow(10px 0 0 $tangerine, -10px 0 0 $tangerine);
+	}
+	&.fuschia {
+		background-color: $fuschia;
+		@include box-shadow(10px 0 0 $fuschia, -10px 0 0 $fuschia);
+	}
+}
+
+h1 {
+	font-size: 1.7142rem;
+	font-family: $pea-ellie-bellie-family;
+}
+
+h2, h3, h4 {
+	font-size: 1.4rem;
+	font-family: $museo-family;
+	font-weight: 100;
+	color: $gray;
+	margin-bottom: 1rem;
+	& em.highlight {
+		line-height: 2.25;
+	}
+}
+
+h3 {
+	font-size: 1.1rem;
+}
+
+h4 {
+	font-size: .9rem;
+}
+
+a.button {
+	font-size: 1.25rem;
+	padding: .6rem 1.4rem;
+	@include border-radius($global-radius);
+	display: inline-block;
+	font-family: $museo-family;
+	min-width: 8rem;
+	color: white;
+	&.small {
+		padding: .4rem 1rem;
+		min-width: 6rem;
+	}
+	&.app-store {
+		background-color: black;
+		@include border-radius(10px);
+		width: 160px;
+		padding: .5rem;	
+	}
+	&.select-button {
+		border: 1px solid;
+		border-color: rgba($gray, 0);
+		background-color: transparent;
+		color: $gray;
+		@include transition(border-color, .2s);
+	}
+	&.aqua {
+		background-color: $aqua;
+	}
+	&.white {
+		background-color: white;
+		border: 1px solid $light-gray; //just to see it
+		color: $dark-gray;
+	}
+	&.tangerine {
+		background-color: $tangerine;
+	}
+	&.fuschia {
+		background-color: $fuschia;
+	}
+	&.sunflower {
+		background-color: $sunflower;
+		color: $dark-gray;
+	}
+	&.teal {
+		background-color: $teal;
+	}
+}
+
+button.parent-hub-nav {
+	font-family: $museo-family;
+	font-weight: 500;
+	text-align: left;
+	background-color: $deep-gray;
+	width: 100%;
+	height: 30px;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+/*~~~~~~~~~~~ SET HERO BACKGROUND IMAGES ~~~~~~~~~~*/
+
+article {
+	&#homepage .hero {
+		background-image: url('../images/home-hero-800.jpg');
+	}
+	&#about .hero {
+		background-image: url('../images/about-hero-800.jpg');
+	}
+	&#camp-descriptions .hero {
+		background-image: url('../images/campdesc-hero-800.jpg');
+		& a.button {
+			margin-top: 2rem;
+		}
+	}
+	&#get-ready .hero {
+		background-image: url('../images/getready-hero-800.jpg');
+	}
+	&#blog .hero {
+		//NEED THIS IMAGE
+		background-image: url('../images/home-hero-800.jpg');
+		& .hero-content {
+			text-align: left;
+			@include background-image(linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.5)));
+			& .title-placement {
+				position: absolute;
+				bottom: 20px;
+				left: 20px;
+				width: 90%;
+			}
+			& h1 {
+				font-family: $museo-family;
+				font-size: 1.7142rem;
+				margin: 0 0 .4rem 0;
+				line-height: 1;
+			}
+			& h2 {
+				font-size: 1.2857rem;
+				font-weight: 100;
+				margin: 0;
+				line-height: 1.3;
+			}
+		}
+	}
+	&#contact .hero {
+		background-image: url('../images/contact-hero-800.jpg');
+	}
+	&#downloads .hero {
+		background-image: url('../images/downloads-hero-800.jpg');
+	}
+	&#important-dates .hero {
+		background-image: url('../images/important-dates-hero-800.jpg');
+	}
+	&#our-team .hero {
+		background-image: url('../images/ourteam-hero-800.jpg');
+	}
+	&#testimonials .hero {
+		background-image: url('../images/testimonial-hero-800.jpg');
+	}
+	&#your-story .hero {
+		background-image: url('../images/story-hero-800.jpg');
+	}
+}
+
+/*~~~~~~~~~~~ END HERO BACKGROUND IMAGES ~~~~~~~~~~*/
+
+
+.hero {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: scroll;
+	height: 330px;
+	padding: 3rem 1rem;
+	& a.hero-link {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+	& .hero-content {
+		/* BK
+		position: absolute;
+		left: 0;
+		right: 0;
+		padding: 1rem;
+		*/
+		position: relative;
+		left: 50%;
+		top: 50%;
+		@include transform(translate(-50%,-50%));
+	}
+	& h1, & h2 {
+		color: white;
+		@include single-text-shadow(0, 0, 22px, 0, rgba(0,0,0,.6));
+		@include transition(color .2s);
+	}
+	& h2 {
+		font-size: 1.125rem;
+		line-height: 2.25;
+		font-weight: 500;
+	}
+	& ul.social {
+		list-style-type: none;
+		color: white;
+		margin: 1rem 0 0;
+		& li {
+			display: inline-block;
+			height: 25px;
+			width: 25px;
+			margin-right: 1rem;
+			& a {
+				display: inline-block;
+				& span {
+					position: relative;
+					top: 1px;
+					display: inline-block;
+					height: 15px;
+					width: 15px;			
+					background-position: 50% 100%;
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			& a {
+				display: inline-block;
+				width: 100%;
+				color: white;
+				@include border-radius($global-radius);
+				background-color: rgba(255,255,255,.5);
+				line-height: 1.65;
+				& img {
+					height: auto;
+					&.icon-fb {
+						width: 8px;
+					}
+					&.icon-tw {
+						width: 17px;
+					}
+					&.icon-inst {
+						width: 17px;
+					}
+				}
+			}
+		}
+	}
+	& .learn-more {
+		position: absolute;
+		bottom: 30px;
+		left: 0;
+		right: 0;
+		color: white;
+		& span {
+			display: inline-block;
+			height: 25px;
+			width: 25px;
+			position: relative;
+			top: 6px;
+			margin: 0 .2rem;
+			@include animation(learn-more-nudge 1.75s infinite ease-in-out);
+		}
+	}
+}
+
+.gradient-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: .65;
+	background-size: cover;
+}
+
+html.no-js {
+	.gradient-overlay {
+		background-image: url('../images/temp-gradient-overlay.png');
+	}
+}
+
+.row {
+	padding-top: 1.75rem;
+	padding-bottom: 1.75rem;
+}
+
+.reverse {
+	background-color: $off-white;
+}
+
+/*~~~~~~~~~~~ END GLOBAL STYLES ~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~ REPLACING HEADER WILL AFFECT BELOW ~~~~~~~~~~*/
+
+.top-bar .toggle-topbar {
+	left: 10px;
+	right: auto;
+	& a {
+		font-family: $museo-family;
+		font-weight: 700;
+		background-color: $dark-gray;
+		@include border-radius($global-radius);
+		margin-top: 10px;
+		height: 25px;
+		line-height: 2;
+		font-size: .75rem;
+		color: white;
+	}
+}
+
+.top-bar.expanded .toggle-topbar a {
+	color: $fuschia;
+}
+
+.fixed {
+	background-color: white;
+	z-index: 999;
+}
+
+nav ul {
+	margin: 30px;
+}
+
+img.nav-logo {
+	max-width: 135px;
+	height: auto;
+	margin-top: .5rem;
+}
+
+/*~~~~~~~~~~~ REPLACING HEADER WILL AFFECT ABOVE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START ARTICLE#HOMEPAGE TEMPLATE ~~~~~~~~~~*/
+
+article#homepage {
+	& .quad-box {
+		& ul {
+			margin: 1rem auto;
+			padding: 0;
+			text-align: center;
+			max-width: 400px;
+			& li {
+				position: relative;
+				float: none;
+				display: inline-block;
+				background-color: white;
+				@include border-radius(10px);
+				height: 120px;
+				background-size: cover;
+				overflow: hidden;
+				cursor: pointer;
+				width: 48%;
+				margin-right: 0;
+				&:hover {
+					& span.expand {
+						top: 0;
+					}
+					& span.caption {
+						bottom: -70px;
+					}
+				}
+				&.sports {
+					background-image: url('../images/temp-quad-sports.jpg');
+					& span.expand {
+						background-color: rgba($aqua, .8);
+					}
+				}
+				&.creative {
+					background-image: url('../images/temp-quad-creative.jpg');
+					& span.expand {
+						background-color: rgba($fuschia, .8);
+					}
+				}
+				&.social-emotional {
+					background-image: url('../images/temp-quad-social-emotional.jpg');
+					& span.expand {
+						background-color: rgba($tangerine, .8);
+					}
+				}
+				&.exceptional-staff {
+					background-image: url('../images/temp-quad-exceptional-staff.jpg');
+					& span.expand {
+						background-color: rgba($sunflower-shade, .8);
+					}
+				}
+				& span {
+					@include transition(all, .3s, ease-in-out);
+				}
+				& span.caption {
+					text-align: left;
+					font-size: 1.25rem;
+					font-weight: 500;
+					padding: .4rem 1rem;
+					line-height: 1.1;
+					overflow: hidden;
+					position: absolute;
+					bottom: 0;
+					left:0;
+					color: white;
+					background-color: rgba(255,255,255,.5);
+					width: 100%;
+					height: 55px;
+				}
+				& span.expand {
+					position: absolute;
+					left: 0;
+					top: 200px;
+					right: 0;
+					bottom: 0;
+					padding: .7rem;
+					display: block;
+					height: 100%;
+					color: white;
+					font-size: .9rem;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+	& .featured-testimonial {
+		position: relative;
+		background-image: url('../images/home-hero-1400.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: scroll;
+		padding: 3.5rem 1rem 2.5rem;
+		color: white;
+		& .testimonial-frame {
+			border: 5px solid white;
+			@include border-radius(10px);
+			padding: 1rem;
+			max-width: 550px;
+			margin: 0 auto;
+			& p {
+				line-height: 2;
+			}
+		}
+		& .testimonial-controls {
+			margin: -19px auto 0 ;
+			width: 200px;
+			& span {
+				display: inline-block;
+				height: 35px;
+				width: 35px;
+				background-color: white;
+				color: $fuschia;
+				@include border-radius(50%);
+				cursor: pointer;
+				line-height: 2.1;
+				background-size: 20px 20px;
+				& img {
+					width: 12px;
+					height: auto;
+				}
+				&.control-left {
+					float: left;
+					background-position: 42% 49%;
+				}
+				&.control-right {
+					float: right;
+					background-position: 58% 49%;
+				}
+			}
+		}
+		& a.button {
+			background-color: rgba(255,255,255,.3);
+			font-size: .85rem;
+			margin: 2rem 0 0 0;
+			padding: 1rem 1.5rem;
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END ARTICLE#HOMEPAGE TEMPLATE ~~~~~~~~~~*/
+
+
+
+
+/*~~~~~~~~~~~ START ABOUT PAGE MODULES ~~~~~~~~~~*/
+
+article#about {
+	& .our-story {
+		background-color: $aqua;
+		color: white;
+		padding: 1rem;
+		& p {
+			text-align: left;
+		}
+		& h2 {
+			color: white;
+			font-size: 2rem;
+			font-weight: 500;
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END ABOUT PAGE MODULES ~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~ START TESTIMONIAL SOURCE SHARED STYLES ~~~~~~~~~~*/
+
+.testimonial-source {
+	text-align: center;
+	margin-bottom: 1rem;
+	& .image-holder {
+		@include border-radius(50%);
+		border: 3px solid white;
+		overflow:hidden;
+		height: 50px;
+		width: 50px;
+		margin: 0 auto 10px;
+	}
+	& img {
+		width: 100%;
+	}
+	& span {
+		display: block;
+	}
+}
+
+/*~~~~~~~~~~~ END TESTIMONIAL SOURCE SHARED STYLES ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START ARTICLE#YOUR-STORY TEMPLATE ~~~~~~~~~~*/
+
+article#your-story {
+	& .row {
+		& h2 {
+			margin: 0 auto;
+			& em {
+				font-size: 2rem;
+				line-height: 2;
+			}
+		}
+		& p {
+			margin: 1rem auto;
+			text-align: left;
+		}
+		& a {
+			font-size: 1.5rem;
+			color: $aqua;
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END ARTICLE#YOUR-STORY TEMPLATE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START ARTICLE#DOWNLOADS TEMPLATE ~~~~~~~~~~*/
+
+article#downloads {
+	& .row {
+		& ul {
+			margin: 1rem auto;
+			list-style-type: none;
+			& li {
+				margin-bottom: 2rem;
+				& a {
+					color: $aqua;
+					text-decoration: underline;
+				}
+			}
+		}
+	}	
+}
+
+/*~~~~~~~~~~~ END ARTICLE#DOWNLOADS TEMPLATE ~~~~~~~~~~*/
+
+/*~~~~~~~~~~~ START BIO SHARED MODULE ~~~~~~~~~~*/
+
+.about-bio {
+	&.photo {
+		text-align: center;
+	}
+	& img {
+		height: 175px;
+		@include border-radius(20px);
+		margin: 1.5rem;
+	}
+	& h2, p {
+		text-align: left;
+	}
+	& h2 {
+		margin-bottom: 0;
+	}
+	& span {
+		display: block;
+		text-align: left;
+		font-weight: 500;
+		margin-bottom: .5rem;
+	}
+}
+
+/*~~~~~~~~~~~ END BIO SHARED MODULE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START ADDITIONAL INFO MODULE ~~~~~~~~~~*/
+
+h2.underlined {
+	border-bottom: 1px solid $light-gray;
+	padding-bottom: .75rem;
+	margin-bottom: 2rem;
+}
+
+/*~~~~~~~~~~~ END ADDITIONAL INFO MODULE ~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~ START REGISTRATION TABLE MODULE ~~~~~~~~~~*/
+
+article#camp-descriptions {
+	& .reg-table {
+		text-align: left;
+		& h2 {
+			text-align: center;
+		}
+		& h3 {
+			font-weight: 500;
+		}
+		& .button-triplet {
+			margin-bottom: .5rem;
+			& .location-button {
+				display: inline-block;
+				width: 30%;
+				margin-right: 2%;
+				padding: 0;
+				&:last-child {
+					margin-right: 0;
+				}
+				& a.button {
+					width: 100%;
+					margin:0;
+				}
+				& .location-tag {
+					text-align: center;
+					padding: 0;
+					margin: 0;
+					line-height: 1.25;
+					&.active {
+						color: $aqua;
+						font-weight: 700;
+					}
+				}
+				& span.map-pin {
+					display: block;
+					background-position: center center;
+					height: 25px;
+					width: 25px;
+					margin: .5rem auto;
+				}
+				& span.address {
+					display: block;
+				}
+			}
+			& a.button {
+				color: $light-gray;
+				width: 30%;
+				margin-right: 2%;
+				background-color: white;
+				border: 1px solid $light-gray;
+				&:last-child {
+					margin-right: 0;
+				}
+				&.active {
+					background-color: $aqua;
+					color: white;
+					border-color: $aqua;
+				}
+			}
+		}
+		& ul.availability-table {
+			margin: 0 auto;
+			list-style-type: none;
+			width: 95%;
+			& li {
+				margin-bottom: 1rem;
+				background-color: $input-bg-color;
+				@include border-radius(10px);
+				border: 1px solid $input-type-color;
+				padding: .5rem;
+				color: $gray;
+				text-align: center;
+				& div {
+					padding: .5rem;
+					border-right: 1px solid $input-type-color;
+					font-size: 1rem;
+					&:nth-child(2) {
+						border-right: none;
+					}
+					&:last-child {
+						border-right: none;
+						border-top: 1px solid $input-type-color;
+					}
+					&.options {
+						& span {
+							
+							line-height: 1;
+						}
+					}
+					& h4 {
+						font-weight: 700;
+						margin:0;
+					}
+					& span {
+						display: block;
+						margin: 0;
+						&.date {
+							//color: green;
+						}
+						&.price {
+							font-size: .75rem;
+						}
+					}
+				}
+			}
+		}
+		& .reg-button-align {
+			margin-top: 2rem;
+			text-align: center;
+		}
+	}
+}
+
+
+/*~~~~~~~~~~~ END REGISTRATION TABLE MODULE ~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~ START TRIPLE EXPANDER MODULE ~~~~~~~~~~*/
+
+.triple-expander-holder {
+	height: 500px;
+}
+
+.triple-expander {	
+	& ul {
+		position: relative;
+		list-style-type: none;
+		margin: 0;
+		& li.row {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 95%;
+			padding: 1.3rem 1.3rem 1.3rem 5%;
+			@include transition(all .2s ease-in-out);
+			margin: 0 auto 1rem;
+			background-color: white;
+			border: 1px solid $light-gray;
+			@include border-radius(10px);
+			text-align: left;
+			& .list-scroll-container {
+				padding-top: 1rem;
+				padding-right: 2rem;
+				position: absolute;
+				margin-left: 1.5rem;
+				top: 100px;
+				height: 230px;
+				overflow: auto;
+				& ul {
+					display: none;
+					& li {
+						& ul {
+							margin: 0 0 1rem;
+						}
+						& h2 {
+							font-size: .9rem;
+							font-weight: 900;
+							letter-spacing: 1px;
+						}
+						& .camp-descriptions-hidden {
+							display: none;
+							& h3 {
+								font-size: .85rem;
+								color: $light-gray;
+								font-weight: 500;
+								margin-bottom: .3rem;
+							}
+						}
+					}
+				}
+			}
+			&:first-child {
+				top: 0;
+				z-index: 0;
+				& h1, & ul li h2 {
+					color: $fuschia;
+				}
+				& span.expander {
+					background-color: $fuschia;
+				}
+			}
+			&:nth-child(2) {
+				top: 120px;
+				z-index: 0;
+				& h1, & ul li h2 {
+					color: $tangerine;
+				}
+				& span.expander {
+					background-color: $tangerine;
+				}
+			}
+			&:nth-child(3) {
+				top: 240px;
+				z-index: 0;
+				& h1, & ul li h2 {
+					color: $aqua;
+				}
+				& span.expander {
+					background-color: $aqua;
+				}
+			}
+			&.expanded {
+				top: 0;
+				height: 367px;
+				z-index: 500;
+				& ul {
+					display: block;
+					& li {
+						& .camp-descriptions-hidden {
+							display: block;
+						}
+					}
+				}
+				& span.expander {
+					@include transform(rotate(45deg));
+				}
+			}
+			& h1 {
+				display: inline-block;
+			}
+			& h1 {
+				margin: 0;
+			}
+			& .camp-logo {
+				padding: 0;
+				& span {
+					display: inline-block;
+					height: 55px;
+					width: 55px;			
+					background-size: 100% 100%;
+					padding: 0 0 0 .2rem;
+				}
+			}
+			& span.caption {
+				display: block;
+				text-align: left;
+			}
+			
+			& span.expander {
+				position: absolute;
+				bottom: 7px;
+				right: 7px;
+				color: white;
+				display: inline-block;
+				@include border-radius(50%);
+				height: 21px;
+				width: 21px;
+				background-size: 65% 65%;
+				background-position: center center;
+				line-height: 1.2;
+				cursor: pointer;
+				text-align: center;
+				@include transition(background-color .2s ease-in-out, transform .1s ease-in-out);
+				& img {
+					@include transition(transform .2s ease-in-out);
+					width: 11px;
+					height: auto;
+					margin-left: 0;
+				}
+			}
+			& .camp-name {
+				text-align: left;
+				padding: .6rem 0 0 .5rem;
+			}
+			& h1 {
+				font-size: .875rem;
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END TRIPLE EXPANDER MODULE ~~~~~~~~~~*/
+
+.slick-slider {
+	margin-bottom: 0 !important;
+}
+
+/*~~~~~~~~~~~ START PROMO MODULE ~~~~~~~~~~*/
+
+.promotions-slick {
+	position: relative;
+	padding: 3rem 0 4rem;
+	margin: 0;
+	& .promo-frame {
+		border: 4px solid white;
+		@include border-radius(4px);
+		padding: 1.5rem;
+		max-width: 550px;
+		margin: 0 auto;
+	}
+	& .promo-icon-backside {
+		width: 65px;
+		margin: 0 auto;
+	}
+	& .promotion-list-item {
+		padding-bottom: 1rem;
+	}
+	& .slick-slider {
+		& .slick-prev, & .slick-next {
+			display: none;
+		}
+	}
+	& span.action-icon {
+		height: 65px;
+		width: 65px;
+		margin: -35px auto 1rem;
+		display: block;
+		@include border-radius(50%);
+		border: 7px solid white;
+		line-height: 2.8;
+		& img {
+			width: 40px;
+			margin-left: -1px;
+			height: auto;
+		}
+	}
+	& h3, & p {
+		color: white;
+	}
+	& h3 {
+		font-weight: 700;
+	}
+	& p {
+		font-weight: 300;
+	}
+	& a {
+		display: inline-block;
+		color: white;
+		padding-bottom: .4rem;
+		border-bottom: 1px solid rgba(255,255,255,0);
+	}
+	&.teal {
+		background-color: $teal;
+		& .promo-icon-backside {
+			background-color: $teal;
+		}
+		& span.action-icon {
+			border-color: $teal;
+		}
+	}
+	&.tangerine {
+		background-color: $tangerine;
+		& .promo-icon-backside {
+			background-color: $tangerine;
+		}
+		& span.action-icon {
+			border-color: $tangerine;
+		}
+	}
+	&.fuschia {
+		background-color: $fuschia;
+		& .promo-icon-backside {
+			background-color: $fuschia;
+		}
+		& span.action-icon {
+			border-color: $fuschia;
+		}
+	}
+	&.aqua {
+		background-color: $aqua;
+		& .promo-icon-backside {
+			background-color: $aqua;
+		}
+		& span.action-icon {
+			border-color: $aqua;
+		}
+	}
+	& .slick-dots {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 1rem 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		& li  {
+			& button {
+				&:before {
+					color: white;
+					font-size: 1rem
+				}
+			}
+			&.slick-active button:before {
+				color: white;
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END PROMO MODULE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START SCHEDULE MODULE ~~~~~~~~~~*/
+
+.schedule {
+	position: relative;
+	background: url('../images/temp-timetable-bg.jpg') no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: scroll;
+	color: white;
+	& .schedule-content {
+		max-width: 500px;
+	}
+	& h2 {
+		color: white;
+		background-color: $deep-gray;
+		padding: .35rem;
+		font-size: 1.125rem;
+	}
+	& ul {
+		text-align: left;
+		list-style-type: none;
+		font-size: .8571rem;
+		padding-right: 1rem;
+		& li {
+			&.row {
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+			& span {
+				padding: 0;
+				font-weight: 300;
+				&.time {
+					padding-left: 1.5rem;
+					font-weight: 900;
+					letter-spacing: .5px;
+				}
+			}
+		}
+	}
+	&.important-dates {
+		background: white;
+		color: $dark-gray;
+		& .schedule-content {
+			& h2 {
+				background-color: $tangerine;
+			}
+			& span.time {
+				font-weight: 900;
+			}
+			& p {
+				font-size: .9rem;
+				color: $fuschia;
+				
+				line-height: 1.5;
+				& strong {
+					font-weight: 900;
+				}
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END SCHEDULE MODULE ~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~ START SCHOLARSHIPS & POLICIES MODULE ~~~~~~~~~~*/
+
+section#scholarships-holder {
+	& .row {
+		padding-bottom: 0;
+		& .scholarships {
+			position: relative;
+			text-align: left;
+			& h3 {
+				font-weight: 500;
+			}
+			& a.button {
+				position: relative;
+				float: right;
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END SCHOLARSHIPS & POLICIES MODULE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START TESTIMONIALS FULL PAGE MODULE ~~~~~~~~~~*/
+
+article#testimonials {
+	& ul {
+		margin: 0 auto;
+		padding-bottom: 0;
+		& li {
+			display: inline;
+			margin-right: 1rem;
+			font-weight: 500;
+			color: white;
+			padding: 0 .25rem;
+			&:last-child {
+				margin-right: 0;
+			}
+			&.campers {
+				background-color: $fuschia;
+			}
+			&.parents {
+				background-color: $aqua;
+			}
+			&.news {
+				background-color: $teal;
+			}
+		}
+	}
+	& .testimonial-grid {
+		margin-top: 1.5rem;
+		& .basic-testimonial-row {
+			padding: 0 .75rem;
+			color: white;
+			& .basic-testimonial {
+				padding: 1.25rem;
+				text-align: left;
+				margin-bottom: .75rem;
+				min-height: 250px;
+				color: white;
+				background-size: cover;
+				background-position: center center;
+				& p, span {
+					font-weight: 700;
+				}
+				& p {
+					max-width: 85%;
+				}
+				& a.button {
+					background-color: white;
+					padding: .4rem .75rem;
+					color: $gray;
+					font-size: .875rem;
+					min-width: 0;
+				}
+				& span {
+					display: block;
+				}
+				& .testimonial-source {
+					margin-bottom: 0;
+					text-align: left;
+					& .image-holder {
+						border-width: 2px;
+						margin: 0 0 .5rem;
+						border-color: white;
+					}
+				}
+				&.camper {
+					@include background-image( linear-gradient(to bottom , rgba($fuschia, .75), rgba($fuschia, .75)), image-url("../images/temp-insta-1.jpg") );
+					&.no-image {
+						background: $fuschia;
+					}
+				}
+				&.parent {
+					@include background-image( linear-gradient(to bottom , rgba($aqua, .75), rgba($aqua, .75)), image-url("../images/temp-insta-1.jpg") );
+					&.no-image {
+						background: $aqua;
+					}
+				}
+				&.news {
+					@include background-image( linear-gradient(to bottom , rgba($teal, .75), rgba($teal, .75)), image-url("../images/temp-insta-1.jpg") );
+					&.no-image {
+						background: $teal;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END TESTIMONIALS FULL PAGE MODULE ~~~~~~~~~~*/
+
+/*~~~~~~~~~~~ START MAP MODULE ~~~~~~~~~~*/
+
+.directions {
+	& img {
+		@include border-radius(10px);
+	}
+	& ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 1rem;
+		& li.row {
+			background-color: $off-white;
+			margin-bottom: .5rem;
+			@include border-radius(10px);
+			padding: .8rem;
+			& .location-holder {
+				text-align: left;
+				& a {
+					display: block;
+					margin-top: .25rem;
+					margin-left: 2.9rem;
+				}
+			}
+			& span.map-icon, & span.location {
+				display: inline-block;
+			}
+			& span.map-icon {
+				vertical-align: top;
+				height: 35px;
+				width: 35px;
+			}
+			& span.location {
+				
+			}
+			&:last-child {
+				margin-botton: 0;
+			}
+			& span {
+				text-align: left;
+				line-height: 1.25;
+				& img {
+					width: 40px;
+				}
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ START MAP MODULE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START FAQ MODULE ~~~~~~~~~~*/
+
+.faq {
+	padding: 2rem;
+	& h2 {
+		font-size: 2.4rem;
+	}
+	& .row {
+		& a.button {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END FAQ MODULE ~~~~~~~~~~*/
+
+/*~~~~~~~~~~~ START UTILITY STYLES ~~~~~~~~~~*/
+
+ul.text-list {
+	list-style-type: none;
+	margin: 0;
+	font-weight: 700;
+	& li {
+		font-weight: 300;
+	}
+}
+
+.button-double {
+	& a.button {
+		margin-right: 2rem;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.button-triplet {
+	& a {
+		font-size: 1rem;
+		min-width: 0;
+		padding-left: .65rem;
+		padding-right: .65rem;
+		margin-right: .5rem;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+/*~~~~~~~~~~~ END UTILITY STYLES ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START BLOG FULL PAGE MODULE ~~~~~~~~~~*/
+
+article#blog .hero .hero-content {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+}
+
+#blog-search {
+	& input {
+		cursor: pointer;
+		border: none;
+		@include box-shadow(none);
+		background: url(../images/svg/icon-gray-search.svg) no-repeat center center;
+		background-size: 20px 20px;
+		margin: 0;
+		@include transition(background-position .2s ease-in-out);
+		&:focus, &.populated {
+			background-position: 20px center;
+			padding-left: 3.5rem;
+		}
+	}
+}
+
+.blog-subscribe {
+	background-color: $aqua;
+	& h2 {
+		color: white;
+	}
+	& .columns {
+		padding: 0;
+	}
+	& form {
+		width: 80%;
+		margin: 0 auto;
+	}
+	& input {
+		font-family: $museo-family;
+		margin: 0;
+		height: 50px;
+		background-color: $input-bg-color;
+		border: 1px solid $input-type-color;
+		color: $input-type-color;
+		font-size: 1.5rem;
+		font-weight: 300;
+		&[type=text] {
+			padding-left: 1rem;
+		}
+		&[type=submit] {
+			margin-top: 1rem;
+			background-color: white;
+			border: none;
+			padding: .75rem 1.5rem;
+			font-size: 1.4rem;
+			color: $gray;
+			margin-left: .35rem;
+			font-weight: 500;
+			@include transition(all .2s);
+		}
+	}
+}
+
+.blog-categories {
+	padding: 0;
+	& a.button {
+		font-size: 1rem;
+		padding: .35rem .5rem;
+		border: none;
+		min-width: 0;
+		&.active {
+			background-color: $dark-gray;
+			color: white;
+		}
+	}
+}
+
+.blog-entry {
+	text-align: left;
+	& img {
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto 1rem;
+	}
+	& h2 {
+		padding-left: 1.75rem;
+		color: $aqua;
+		font-size: 1rem;
+		margin: 0;
+	}
+	p {
+		padding-left: 1.75rem;
+		padding-right: 1.75rem;
+		margin-top: .5rem;
+	}
+}
+
+ul.blog-pages {
+	list-style-type: none;
+	margin: 0 auto 1rem;
+	& li {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		@include border-radius($global-radius);
+		overflow: hidden;
+		& a {
+			text-align: center;
+			width: 100%;
+			color: white;
+			display: inline-block;
+			background-color: $gray;
+			line-height: 2;
+			font-weight: 700;
+			& img {
+				width: 10px;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END BLOG FULL PAGE MODULE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START CONTACT MODULE ~~~~~~~~~~*/
+
+.contact-row {
+	background-color: $aqua;
+	color: white;
+	text-align: left;
+	& h2 {
+		color: white;
+	}
+	& form {
+		margin-bottom: 1.5rem;
+		& input, & textarea {
+			background-color: $input-bg-color;
+			border: 1px solid $input-type-color;
+			@include border-radius($global-radius);
+			color: $input-type-color;
+			font-size: 1rem;
+			font-weight: 700;
+			
+		}
+		& textarea {
+			&::-webkit-input-placeholder {
+			   color: $input-type-color;
+			}
+			&:-moz-placeholder { /* Firefox 18- */
+			   color: $input-type-color;
+			}
+			&::-moz-placeholder {  /* Firefox 19+ */
+			   color: $input-type-color;
+			}
+			&:-ms-input-placeholder {  
+			   color: $input-type-color;
+			}
+			&:focus {
+				background-color: white;
+			}
+		}
+		& input[type=submit] {
+			background-color: white;
+			color: $input-type-color;
+			font-size: 1rem;
+			font-weight: 700;
+			float: right;
+			border: none;
+			letter-spacing: 1px;
+			padding: .75rem 2rem;
+			@include border-radius($global-radius);
+			cursor: pointer;
+			@include transition(all .2s);
+		}
+	}
+	& ul {
+		margin: 0;
+		list-style-type: none;
+		& li {
+			margin-bottom: .5rem;
+			& a {
+				color: white;
+				& span {
+					position: relative;
+					top: 6px;
+					margin-right: 1rem;
+					display: inline-block;
+					height: 25px;
+					width: 25px;
+				}
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ END CONTACT MODULE ~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~ START FOOTER MODULE ~~~~~~~~~~*/
+
+footer {
+	padding: 2rem 0;
+	background-color: #3a3b3c;
+	text-align: left;
+	& h1 {
+		color: white;
+		font-size: .8571rem;
+		font-family: $museo-family;
+		& span {
+			position: relative;
+			top: 2px;
+			display: inline-block;
+			height: 12px;
+			width: 12px;
+			margin-right: 7px;
+		}
+	}
+	& h2 {
+		color: #abacad;
+		font-size: .7142rem; //10px
+	}
+	& p, & ul.site-map li, & ul.site-map li a {
+		color: #abacad;
+		line-height: 2;
+		font-size:.7142rem; //10px
+	}
+	& p.tweet {
+		max-width: 9rem;
+	}
+	& a.telto {
+		color: inherit;
+	}
+	& a.mailto {
+		color: white;
+		font-size: .7142rem; //10px
+		padding-bottom: .1rem;
+		border-bottom: 1px solid white;
+	}
+	& a.footer-btn {
+		display: inline-block;
+		border: 1px solid white;
+		@include border-radius(4px);
+		text-transform: uppercase;
+		color: white;
+		font-size: .7142rem; //10px
+		padding: .3rem .5rem;
+		text-align: center;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	& ul.site-map {
+		list-style-type: none;
+		margin-left: 0;
+		& li {
+			margin-bottom: .6rem;
+		}
+	}
+	& .small-block-grid-3 {
+		max-width: 10rem;
+	}
+	& .copyright {
+		margin-top: 1.5rem;
+		& p {
+			font-size: .7142rem; //10px
+			& span, & span a {
+				color: white;
+			}
+		}
+		
+	}
+}
+
+/*~~~~~~~~~~~ END FOOTER MODULE ~~~~~~~~~~*/
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~ ANIMATIONS ~~~~~~~~~~~~~~~~~~~~~*/
+
+@include keyframes( 'learn-more-nudge' ) {
+    0%    { top: 7px; }
+    25%  { top: 0px; }
+    50%  { top: 11px; }
+    60%  { top: 7px; }
+    100%  { top: 7px; }
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~ NAVIGATION THIS WILL GET THROWN OUT WITH SOPHIA'S NEW NAV ~~~~~~~~~~~*/
+@media screen and (min-width: 640px) {
+	img.nav-logo {
+		max-width: 90px;
+	}
+	button.parent-hub-nav {
+		margin-top: 1rem;
+	}
+    .top-bar-section {
+    	padding: .5rem;
+    	& ul {
+    		& li {
+    			& a {
+    				font-size: .85rem;
+    				text-transform: uppercase;
+    				color: $dark-gray;
+    				background-color: white;
+    			}
+    		}
+    	}
+    }
+}
+
+
+/*~~~~~~~~~~~ MEDIUM UP ~~~~~~~~~~~*/
+@media screen and (min-width: 40.063em) {
+	html {
+		font-size: 16px;
+	}
+	h1 {
+		font-size: 2.8125rem;
+	}
+	h2 {
+		font-size: 2.5rem;
+	}
+	p em {
+		font-size: 1.5rem;
+		line-height: 2.25;
+	}
+	nav ul {
+		background-color: white;
+	}
+	article {
+		&#homepage .hero {
+			background-image: url('../images/home-hero-1400.jpg');
+		}
+		&#about .hero {
+			background-image: url('../images/about-hero-1400.jpg');
+		}
+		&#camp-descriptions .hero {
+			background-image: url('../images/campdesc-hero-1400.jpg');
+			& a.button.small {
+				font-size: 1.25rem;
+				padding: .6rem 1.4rem;
+			}
+		}
+		&#get-ready .hero {
+			background-image: url('../images/getready-hero-1400.jpg');
+		}
+		&#blog .hero {
+			//NEED THIS IMAGE
+			background-image: url('../images/home-hero-1400.jpg');
+		}
+		&#contact .hero {
+			background-image: url('../images/contact-hero-1400.jpg');
+		}
+		&#downloads .hero {
+			background-image: url('../images/downloads-hero-1400.jpg');
+		}
+		&#important-dates .hero {
+			background-image: url('../images/important-dates-hero-1400.jpg');
+		}
+		&#our-team .hero {
+			background-image: url('../images/ourteam-hero-1400.jpg');
+		}
+		&#testimonials .hero {
+			background-image: url('../images/testimonial-hero-1400.jpg');
+		}
+		&#your-story {
+			& .hero {
+				background-image: url('../images/story-hero-1400.jpg');
+			}
+			& .row {
+				& h2 {
+					width: 75%;
+				}
+				& p {
+					width: 75%;
+				}
+			}
+		}
+	}
+	.hero {
+		height: 500px;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		& h2 {
+			font-size: 1.5rem;
+			margin: 0 auto 1rem;
+			line-height: 2.25;
+			width: 50%;
+			max-width: 65%;
+		}
+	}
+	.featured-testimonial {
+		padding: 4rem 0;
+	}
+    .about-bio {
+    	& p {
+    		padding-right: 1rem;
+    	}
+	    &.photo {
+    		text-align: left;
+    		& img {
+    			margin: 0;
+    		}
+    	}
+    	div {
+    		text-align: left;
+    	}
+    }
+    article#about {
+		& .our-story {
+			& .row {
+				max-width: 50rem;
+			}
+		}
+	}
+    .blog-pad {
+    	padding-left: 1rem;
+    }
+    .blog-entry {
+    	& img {
+    		height: 200px;
+    		width: auto;
+    	}
+    }
+    .blog-subscribe input[type=submit] {
+    	width: 100%;
+    	margin-top: 0;
+    }
+    .directions {
+    	padding: 1rem;
+    	margin-bottom: 2rem;
+    	& .column, & .columns {
+    		padding-right: 0;
+    	}
+    	& ul li.row .location-holder {
+    		padding-left: 2rem;
+    		& a {
+    			margin-left: 2.45rem;
+    		}
+    	}
+    	& .directions-link {
+    		padding-left: 4.9rem;
+    	}
+    	& ul {
+    		margin-top: 0;
+    		padding-top: 0;
+    	}
+    }
+    .triple-expander-holder {
+		height: 470px;
+	}
+    .triple-expander ul {
+	    & li.row {
+	    	top: 0;
+	    	left: 5%;
+	    	width: 28%;
+	    	margin: 0 1.5% 0 0;
+	    	height: 315px;
+	    	padding-left: 0;
+	    	padding-right: 0;
+	    	& .list-scroll-container {
+	    		top: 175px;
+	    		height: 200px;
+	    		width: 95%;
+		    	& ul {
+		    		display: block;
+		    		& li {
+		    			margin-bottom: .75rem;
+		    			text-align: left;
+		    			& span {
+		    				display: inline-block;
+		    				height: 25px;
+		    				width: 25px;
+		    				text-align: center;
+		    				color: white;
+		    				margin-right: .5rem;
+		    				@include border-radius(50%);
+		    				background-color: $fuschia;
+		    				line-height: 1.5;
+		    				cursor: pointer;
+		    				& img {
+		    					width: 11px;
+								height: auto;
+								margin-left: 0;
+		    				}
+		    			}
+		    		}
+		    	}
+	    	}
+	    	&:last-child {
+	    		margin-right: 0;
+	    	}
+	    	& span.caption {
+	    		text-align: center;
+	    		margin-bottom: .5rem;
+	    	}
+	    	& h1 {
+    			margin: 1rem 0 .75rem;
+    		}
+	    	& .camp-logo {
+	    		text-align: center;
+			}
+	    	& .camp-name {
+	    		text-align: center;
+	    	}
+	    	& h1 {
+	    		padding-bottom: .4rem;
+	    		border-bottom: 1px solid $fuschia;
+	    	}
+	    	&:nth-child(2) {
+	    		top: 0;
+	    		left: 35.75%;
+	    		& ul li span {
+	    			background-color: $tangerine;
+	    		}
+	    		h1 {
+	    			border-color: $tangerine;
+	    		}
+	    	}
+	    	&:nth-child(3) {
+	    		top: 0;
+	    		left: 66.5%;
+	    		& ul li span {
+	    			background-color: $aqua;
+	    		}
+	    		h1 {
+	    			border-color: $aqua;
+	    		}
+	    	}
+	    	&.expanded {
+	    		top: -80px;
+	    		left: 5%;
+	    		width: 89.5%;
+	    		height: 395px;
+	    		@include single-box-shadow(0, 0, 20px, 0, rgba(0,0,0,.2), false);
+	    	}
+	    }
+	}
+	article#camp-descriptions {
+		& .reg-table {
+			max-width: 50rem;
+			ul.availability-table {
+				& li {
+					& div {
+						min-height: 80px;
+						border-right: 1px solid $input-type-color;
+						&:nth-child(2) {
+							border-right: 1px solid $input-type-color;
+						}
+						&:last-child {
+							border-right: none;
+							border-top: none;
+						}
+					}
+				}
+			}
+			& .reg-button-align {
+				text-align: right;
+			}
+		}
+	}
+}
+
+/*~~~~~~~~~~~ FEATURED SLIDER CONTROLS ~~~~~~~~~~~*/
+@media screen and (min-width: 725px) {
+	article#homepage .featured-testimonial .testimonial-frame.slick-slider {
+		& button {
+			&:before {
+				font-size: 2rem;
+			}
+			&:hover:before {
+				height: inherit !important;
+				width: inherit !important;
+			}
+			&.slick-prev {
+				left: -50px !important;
+			}
+			&.slick-next {
+				right: -50px !important;
+			}
+		}
+	}
+}
+
+
+
+/*~~~~~~~~~~~ CONTACT FORM ~~~~~~~~~~~*/
+@media screen and (min-width: 51.8rem) {
+	.contact-row {
+    	& .row {
+    		width: 70%;
+    		max-width: 70%;
+    	}
+    }
+}
+
+@media screen and (min-width: 65rem) {
+	.contact-row {
+    	& .row {
+    		width: 60%;
+    		max-width: 60%;
+    	}
+    }
+}
+
+
+/*~~~~~~~~~~~ LARGE UP ~~~~~~~~~~~*/
+@media screen and (min-width: 64.063em) {
+	.button-triplet {
+		padding-bottom: 1rem;
+	}
+	article#testimonials {
+		.testimonial-grid .basic-testimonial-row {
+			margin-bottom: 2.5rem;
+		}
+	}
+	section#scholarships-holder {
+		width: 50rem;
+		margin: 0 auto;
+		padding-bottom: 2rem;
+	}
+}
+
+
+/*~~~~~~~~~~~ QUAD BOX ~~~~~~~~~~~*/
+
+@media screen and (min-width: 420px) {
+	article#homepage {
+	    & .quad-box {
+	    	& ul {
+			    & li {
+			    	width: 175px;
+			    	height: 145px;
+			    }
+		    }
+		}
+	}
+}
+
+@media screen and (min-width: 850px) {
+    article#homepage {
+	    & .quad-box {
+	    	& ul {
+	    		max-width: none;
+		    	width: 100%;
+			    & li {
+			    	margin-right: 1rem;
+			    	&:last-child {
+			    		margin-right: 0;
+			    	}
+			    }
+		    }
+		}
+	}
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+
+
+
+
